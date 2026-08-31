@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch Checkpoints & Large Data Files
+*.pth
+*.pt
+*.onnx
+data/
+datasets/
+*.zip
+*.tar.gz
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# OS & Environment
+.DS_Store
+.env
+venv/
+env/
