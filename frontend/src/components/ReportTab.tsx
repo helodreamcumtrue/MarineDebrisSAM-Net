@@ -1,5 +1,6 @@
 import { ExternalLink, RefreshCw } from 'lucide-react';
 import { HealthStatus } from '../api/client';
+import { assetUrl } from '../data/benchmarkData';
 
 interface ReportTabProps {
   health: HealthStatus | null;
@@ -16,10 +17,10 @@ export function ReportTab({ health, onRefreshHealth }: ReportTabProps) {
         </p>
 
         <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-          <a className="pill-btn pill-dark" href="/docs/MarineDebrisSAM_report.pdf" target="_blank" rel="noreferrer">
+          <a className="pill-btn pill-dark" href={assetUrl('docs/MarineDebrisSAM_report.pdf')} target="_blank" rel="noreferrer">
             <ExternalLink size={14} /> Open Report PDF
           </a>
-          <a className="pill-btn pill-outline" href="/docs/research_poster.png" target="_blank" rel="noreferrer">
+          <a className="pill-btn pill-outline" href={assetUrl('docs/research_poster.png')} target="_blank" rel="noreferrer">
             <ExternalLink size={14} /> View Poster
           </a>
         </div>

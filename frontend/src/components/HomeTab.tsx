@@ -1,4 +1,5 @@
 import { ArrowRight, Cpu, Eye, Layers, Sparkles } from 'lucide-react';
+import { assetUrl } from '../data/benchmarkData';
 
 interface HomeTabProps {
   onGoDemo: () => void;
@@ -65,7 +66,7 @@ export function HomeTab({ onGoDemo, onGoResults, onGoReport }: HomeTabProps) {
 
         <div className="hero-visual" style={{ aspectRatio: '4 / 3' }}>
           <img
-            src="/samples/sample_1_metal_orig.png"
+            src={assetUrl('samples/sample_1_metal_orig.png')}
             alt="Underwater ROV grasping metallic marine debris"
           />
         </div>
