@@ -1,0 +1,10 @@
+services:
+  marinedebrissam:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./checkpoints:/app/checkpoints
+    environment:
+      - PORT=7860
+      - CHECKPOINTS_DIR=/app/checkpoints

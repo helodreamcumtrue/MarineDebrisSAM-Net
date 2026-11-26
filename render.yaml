@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: marinedebrissam-net
+    runtime: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: "7860"
+      - key: CHECKPOINTS_DIR
+        value: /app/checkpoints
+    healthCheckPath: /api/health

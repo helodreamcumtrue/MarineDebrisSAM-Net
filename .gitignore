@@ -20,4 +20,9 @@ datasets/
 .DS_Store
 .env
 venv/
+.venv/
 env/
+
+# Frontend Build & Dependencies
+frontend/node_modules/
+frontend/dist/

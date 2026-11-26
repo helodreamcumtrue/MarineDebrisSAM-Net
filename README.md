@@ -47,3 +47,38 @@ The proposed MDMAM framework processes dual streams concurrently:
 ### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+---
+
+## Full-Stack Web App & Deployment (FastAPI + React)
+
+This repository includes an integrated **FastAPI + PyTorch inference backend** (`backend/`) and **React + TypeScript + Vite frontend** (`frontend/`) for live showcase and cloud deployment.
+
+### 1. Add Trained Checkpoints (Optional for Live PyTorch Inference)
+Place your Colab-trained `.pth` checkpoints in `checkpoints/`:
+- `best_model_a1.pth`
+- `best_model_a2.pth`
+- `best_model_a3.pth`
+- `best_model_a5.pth`
+- `best_model_optimized_a5.pth`
+
+### 2. Run Locally
+```bash
+# Terminal 1 — Start FastAPI backend (Python 3.10+)
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --host 0.0.0.0 --port 8000
+
+# Terminal 2 — Start React frontend
+cd frontend
+npm install
+npm run dev
+```
+The frontend works immediately at `http://localhost:5173` (with curated TrashCan validation samples, interactive ablation analytics, confusion matrices, and preview mode when `.pth` weights are not yet attached).
+
+### 3. One-Container Deployment (Docker / Hugging Face Spaces / Render)
+```bash
+docker build -t marinedebrissam-net .
+docker run -p 7860:7860 -v ./checkpoints:/app/checkpoints marinedebrissam-net
+```
+Or deploy `backend/` via `render.yaml` / `Dockerfile` and `frontend/` via `frontend/vercel.json` (set `VITE_API_URL` to your backend URL).
